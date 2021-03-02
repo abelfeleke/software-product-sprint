@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/** Servlet that responds with "hello world" */
+/** Servlet that responds with ["x","y","z"] */
 @WebServlet("/string")
 public class StringServlet extends HttpServlet {
 
