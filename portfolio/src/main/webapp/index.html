@@ -8,7 +8,7 @@
     <script src="script.js"></script>
   </head>
 
-  <body>
+  <body onload = "loadEmails()">
     <div id="content">
 
       <!-- Intro -->
@@ -61,6 +61,10 @@
         <br/>
         <input type="submit" />
       </form>
+
+      <hr/>
+
+      <ul id="email-list"></ul>
 
       <!-- Links to socials -->
       <br/>
