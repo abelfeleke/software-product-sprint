@@ -45,7 +45,7 @@ async function loadEmails() {
     const emailListElement = document.getElementById("email-list");
     emails.forEach((email) => {
       emailListElement.appendChild(createEmailElement(email));
-    })
+    });
   });
 }
 

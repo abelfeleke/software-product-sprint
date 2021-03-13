@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/** Servlet responsible for listing tasks. */
+/** Servlet responsible for listing emails. */
 @WebServlet("/list-emails")
 public class ListEmailsServlet extends HttpServlet {
 
@@ -45,7 +45,7 @@ public class ListEmailsServlet extends HttpServlet {
     Gson gson = new Gson();
 
     // Email entity list -> JSON 
-    response.setContentType("application/json;");
+    response.setContentType("application/json");
     response.getWriter().println(gson.toJson(emails));
   }
 }
