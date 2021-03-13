@@ -33,8 +33,29 @@ async function fetchRandom() {
   const responseFromServer = await fetch('/string');
   const msgs = await responseFromServer.json();
 
-  const randomMsg = msgs[Math.floor(Math.random() * msgs.length)]
+  const randomMsg = msgs[Math.floor(Math.random() * msgs.length)];
 
   const stringContainer = document.getElementById('string-container');
   stringContainer.innerText = randomMsg;
+}
+
+/** Loads user input emails and displays them on page */
+async function loadEmails() {
+    fetch('/list-emails').then(response => response.json()).then((emails) => {
+    const emailListElement = document.getElementById("email-list");
+    emails.forEach((email) => {
+      emailListElement.appendChild(createEmailElement(email));
+    });
+  });
+}
+
+/** Creates an element that represents an email */
+function createEmailElement(entity) {
+  const emailElement = document.createElement('li');
+  
+  const titleElement = document.createElement('span');
+  titleElement.innerText = entity.email;
+
+  emailElement.appendChild(titleElement);
+  return emailElement;
 }
